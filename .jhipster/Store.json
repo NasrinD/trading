@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "store(name)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "inventory",
+            "otherEntityName": "inventory",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "store(name)"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180603102152",
+    "entityTableName": "store",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

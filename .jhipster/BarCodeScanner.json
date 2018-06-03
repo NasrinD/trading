@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "controller",
+            "otherEntityName": "barCodeScannerController",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "printer"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "barCodeScanner"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "model",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180603102200",
+    "entityTableName": "bar_code_scanner",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

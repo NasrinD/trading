@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "inventory",
+            "otherEntityName": "inventory",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDeskApplication"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "cashDeskApplications",
+            "relationshipName": "banks",
+            "otherEntityName": "bank",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180603102154",
+    "entityTableName": "cash_desk_application",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

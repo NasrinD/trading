@@ -1,0 +1,24 @@
+
+{
+    "tradingsystemEmApp": {
+        "cardReader" : {
+            "home": {
+                "title": "Card Readers",
+                "createLabel": "Create a new Card Reader",
+                "createOrEditLabel": "Create or edit a Card Reader"
+            },
+            "created": "A new Card Reader is created with identifier {{ param }}",
+            "updated": "A Card Reader is updated with identifier {{ param }}",
+            "deleted": "A Card Reader is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Card Reader {{ id }}?"
+            },
+            "detail": {
+                "title": "Card Reader"
+            },
+            "model": "Model",
+            "controller": "Controller",
+            "cashDesk": "Cash Desk"
+        }
+    }
+}

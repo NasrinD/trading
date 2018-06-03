@@ -1,0 +1,26 @@
+
+{
+    "tradingsystemEmApp": {
+        "debit" : {
+            "home": {
+                "title": "Debits",
+                "createLabel": "Create a new Debit",
+                "createOrEditLabel": "Create or edit a Debit"
+            },
+            "created": "A new Debit is created with identifier {{ param }}",
+            "updated": "A Debit is updated with identifier {{ param }}",
+            "deleted": "A Debit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Debit {{ id }}?"
+            },
+            "detail": {
+                "title": "Debit"
+            },
+            "pin": "Pin",
+            "cardNumber": "Card Number",
+            "validityDate": "Validity Date",
+            "owner": "Owner",
+            "bank": "Bank"
+        }
+    }
+}

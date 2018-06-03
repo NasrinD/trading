@@ -1,0 +1,43 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCashBoxLabel" jhiTranslate="tradingsystemEmApp.cashBox.home.createOrEditLabel">Create or edit a Cash Box</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!cashBox.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="cashBox.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.cashBox.model" for="field_model">Model</label>
+            <input type="text" class="form-control" name="model" id="field_model"
+                [(ngModel)]="cashBox.model" required/>
+            <div [hidden]="!(editForm.controls.model?.dirty && editForm.controls.model?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.model?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.cashBox.controller" for="field_controller">Controller</label>
+            <select class="form-control" id="field_controller" name="controller" [(ngModel)]="cashBox.controller">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cashBoxControllerOption.id === cashBox.controller?.id ? cashBox.controller : cashBoxControllerOption" *ngFor="let cashBoxControllerOption of controllers; trackBy: trackCashBoxControllerById">{{cashBoxControllerOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

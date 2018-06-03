@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "controller",
+            "otherEntityName": "printerController",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "printer"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "printer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "model",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180603102158",
+    "entityTableName": "printer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

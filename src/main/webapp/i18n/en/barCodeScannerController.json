@@ -1,0 +1,22 @@
+
+{
+    "tradingsystemEmApp": {
+        "barCodeScannerController" : {
+            "home": {
+                "title": "Bar Code Scanner Controllers",
+                "createLabel": "Create a new Bar Code Scanner Controller",
+                "createOrEditLabel": "Create or edit a Bar Code Scanner Controller"
+            },
+            "created": "A new Bar Code Scanner Controller is created with identifier {{ param }}",
+            "updated": "A Bar Code Scanner Controller is updated with identifier {{ param }}",
+            "deleted": "A Bar Code Scanner Controller is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Bar Code Scanner Controller {{ id }}?"
+            },
+            "detail": {
+                "title": "Bar Code Scanner Controller"
+            },
+            "printer": "Printer"
+        }
+    }
+}

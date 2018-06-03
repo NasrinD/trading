@@ -1,0 +1,40 @@
+
+<div *ngIf="receiptItem">
+    <h2><span jhiTranslate="tradingsystemEmApp.receiptItem.detail.title">Receipt Item</span> {{receiptItem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="tradingsystemEmApp.receiptItem.productBarCode">Product Bar Code</span></dt>
+        <dd>
+            <span>{{receiptItem.productBarCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemEmApp.receiptItem.productSalesPrice">Product Sales Price</span></dt>
+        <dd>
+            <span>{{receiptItem.productSalesPrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemEmApp.receiptItem.productName">Product Name</span></dt>
+        <dd>
+            <span>{{receiptItem.productName}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemEmApp.receiptItem.receipt">Receipt</span></dt>
+        <dd>
+            <div *ngIf="receiptItem.receipt">
+                <a [routerLink]="['/receipt', receiptItem.receipt?.id]">{{receiptItem.receipt?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'receipt-item/'+ receiptItem.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

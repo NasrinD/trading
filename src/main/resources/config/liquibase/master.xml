@@ -5,6 +5,38 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102152_added_entity_Store.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102153_added_entity_CashDesk.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102154_added_entity_CashDeskApplication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102155_added_entity_CashDeskGUI.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102156_added_entity_CashBox.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102157_added_entity_CashBoxController.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102158_added_entity_Printer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102159_added_entity_PrinterController.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102200_added_entity_BarCodeScanner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102201_added_entity_BarCodeScannerController.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102202_added_entity_CardReader.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102203_added_entity_CardReaderController.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102204_added_entity_Bank.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102205_added_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102206_added_entity_Debit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102207_added_entity_Receipt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102208_added_entity_ReceiptItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102209_added_entity_Inventory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102210_added_entity_StockItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102211_added_entity_Product.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180603102152_added_entity_constraints_Store.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102153_added_entity_constraints_CashDesk.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102154_added_entity_constraints_CashDeskApplication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102156_added_entity_constraints_CashBox.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102158_added_entity_constraints_Printer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102200_added_entity_constraints_BarCodeScanner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102202_added_entity_constraints_CardReader.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102205_added_entity_constraints_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102206_added_entity_constraints_Debit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102207_added_entity_constraints_Receipt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102208_added_entity_constraints_ReceiptItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180603102210_added_entity_constraints_StockItem.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

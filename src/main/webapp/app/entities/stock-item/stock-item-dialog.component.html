@@ -1,0 +1,99 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myStockItemLabel" jhiTranslate="tradingsystemEmApp.stockItem.home.createOrEditLabel">Create or edit a Stock Item</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!stockItem.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="stockItem.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.stockItem.salesPrice" for="field_salesPrice">Sales Price</label>
+            <input type="number" class="form-control" name="salesPrice" id="field_salesPrice"
+                [(ngModel)]="stockItem.salesPrice" required/>
+            <div [hidden]="!(editForm.controls.salesPrice?.dirty && editForm.controls.salesPrice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.salesPrice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.salesPrice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.stockItem.amount" for="field_amount">Amount</label>
+            <input type="number" class="form-control" name="amount" id="field_amount"
+                [(ngModel)]="stockItem.amount" required/>
+            <div [hidden]="!(editForm.controls.amount?.dirty && editForm.controls.amount?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.amount?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.amount?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.stockItem.minStock" for="field_minStock">Min Stock</label>
+            <input type="number" class="form-control" name="minStock" id="field_minStock"
+                [(ngModel)]="stockItem.minStock" required/>
+            <div [hidden]="!(editForm.controls.minStock?.dirty && editForm.controls.minStock?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.minStock?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.minStock?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.stockItem.maxStock" for="field_maxStock">Max Stock</label>
+            <input type="number" class="form-control" name="maxStock" id="field_maxStock"
+                [(ngModel)]="stockItem.maxStock" required/>
+            <div [hidden]="!(editForm.controls.maxStock?.dirty && editForm.controls.maxStock?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.maxStock?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.maxStock?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.stockItem.product" for="field_product">Product</label>
+            <select class="form-control" id="field_product" name="product" [(ngModel)]="stockItem.product">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="productOption.id === stockItem.product?.id ? stockItem.product : productOption" *ngFor="let productOption of products; trackBy: trackProductById">{{productOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.stockItem.inventory" for="field_inventory">Inventory</label>
+            <select class="form-control" id="field_inventory" name="inventory" [(ngModel)]="stockItem.inventory" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="inventoryOption.id === stockItem.inventory?.id ? stockItem.inventory : inventoryOption" *ngFor="let inventoryOption of inventories; trackBy: trackInventoryById">{{inventoryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

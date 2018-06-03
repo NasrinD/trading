@@ -1,0 +1,38 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCashDeskApplicationLabel" jhiTranslate="tradingsystemEmApp.cashDeskApplication.home.createOrEditLabel">Create or edit a Cash Desk Application</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!cashDeskApplication.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="cashDeskApplication.id" readonly />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.cashDeskApplication.inventory" for="field_inventory">Inventory</label>
+            <select class="form-control" id="field_inventory" name="inventory" [(ngModel)]="cashDeskApplication.inventory">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="inventoryOption.id === cashDeskApplication.inventory?.id ? cashDeskApplication.inventory : inventoryOption" *ngFor="let inventoryOption of inventories; trackBy: trackInventoryById">{{inventoryOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="tradingsystemEmApp.cashDeskApplication.banks" for="field_banks">Banks</label>
+            <select class="form-control" id="field_banks" multiple name="banks" [(ngModel)]="cashDeskApplication.banks">
+                <option [ngValue]="getSelected(cashDeskApplication.banks, bankOption)" *ngFor="let bankOption of banks; trackBy: trackBankById">{{bankOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

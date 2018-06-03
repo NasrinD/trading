@@ -1,0 +1,116 @@
+//Should user be the same as cashier? Or should I create an extra entity for cashier?
+//For now I decided, that cashier is the same as user.
+//I assume, that all Device controllers are actually the resource/controller/service classes of rest.
+//Furthermore I assume, that CashDeskApplication is actually the resource/controller/service class of the cashDesk.
+//-----------------------------------------
+entity Store {
+	name String required,
+	address String
+}
+entity CashDesk
+entity CashDeskApplication
+entity CashDeskGUI
+//-----------------------------------------
+entity CashBox {
+	model String required
+}
+entity CashBoxController
+//-----------------------------------------
+entity Printer  {
+	model String required
+}
+entity PrinterController
+//-----------------------------------------
+entity BarCodeScanner {
+	model String required
+}
+entity BarCodeScannerController
+//-----------------------------------------
+entity CardReader {
+	model String required
+}
+entity CardReaderController
+//-----------------------------------------
+entity Bank {
+	name String required,
+	address String
+}
+entity Customer {
+	firstName String required,
+	lastName String required
+}
+entity Debit {
+	pin Long required,
+	cardNumber Long required,
+	validityDate Instant required
+}
+enum PaymentMode {
+	CASH, CARD
+}
+//-----------------------------------------
+entity Receipt {
+	date Instant required,
+	paymentMode PaymentMode required,
+	runningTotal BigDecimal required
+}
+//Because we need to save the price 
+entity ReceiptItem {
+	productBarCode Long required,
+	productSalesPrice BigDecimal required,
+	productName String required
+}
+//-----------------------------------------
+entity Inventory
+entity StockItem {
+	//The price with which we sale the product to our customers.
+	salesPrice BigDecimal required,
+	amount Long required,
+	minStock Long required,
+	maxStock Long required
+}
+entity Product {
+	name String required,
+	barCode Long required,
+	//The price, with which we bought the product from the supplier.
+	purchasePrice BigDecimal required
+}
+//-----------------------------------------
+//From other entities to the User we can have ManyToOne, OneToOne and ManyToMany relationships.
+//In all forms of relationships with User, the other entity should be the owner of the relationship.
+//User{cashBox} to CashBox{cashier(login)}
+//User{barCodeScanner} to BarCodeScanner{cashier(login)}
+relationship OneToOne {
+	Store{cashDesk} to CashDesk{store(name)},
+	Store{inventory} to Inventory{store(name)},
+	StockItem{product} to Product{stockItem},
+	CashDesk{printer} to Printer{cashDesk},
+	CashDesk{cashBox} to CashBox{cashDesk},
+	CashDesk{cashDeskGui} to CashDeskGUI{cashDesk},
+	CashDesk{barCodeScanner} to BarCodeScanner{cashDesk},
+	CashDesk{cardReader} to CardReader{cashDesk},
+	CashDeskApplication{inventory} to Inventory{cashDeskApplication}
+}
+
+relationship OneToOne {
+	Printer{controller} to PrinterController{printer},
+	CardReader{controller} to CardReaderController{printer},
+	BarCodeScanner{controller} to BarCodeScannerController{printer},
+	CashBox{controller} to CashBoxController{printer}
+}
+
+relationship ManyToMany {
+  CashDeskApplication{banks} to Bank{cashDeskApplications},
+	CashDesk{cashiers(login)} to User
+}
+
+//In the UI the Many part of the relationship will have a drop-down for choosing its related One part. 
+//The unidirectional OneToMany relationships aren't supported by JHispter.
+//This means we can't have Owner{car} to car. Car must know its owner.
+relationship OneToMany {
+	Inventory{stockItems} to StockItem{inventory},
+	Receipt{receiptItems} to ReceiptItem{receipt},
+	Bank{customers} to Customer{bank},
+	Customer{debits} to Debit{owner},
+	Bank{debits} to Debit{bank},
+	Customer{receipts} to Receipt{customer}
+}

@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cashDeskGui"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180603102155",
+    "entityTableName": "cash_desk_gui",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

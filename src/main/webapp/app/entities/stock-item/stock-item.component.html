@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="tradingsystemEmApp.stockItem.home.title">Stock Items</span>
+        <button class="btn btn-primary float-right jh-create-entity create-stock-item" [routerLink]="['/', { outlets: { popup: ['stock-item-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="tradingsystemEmApp.stockItem.home.createLabel">
+            Create new Stock Item
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="stockItems">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.stockItem.salesPrice">Sales Price</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.stockItem.amount">Amount</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.stockItem.minStock">Min Stock</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.stockItem.maxStock">Max Stock</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.stockItem.product">Product</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.stockItem.inventory">Inventory</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let stockItem of stockItems ;trackBy: trackId">
+                <td><a [routerLink]="['../stock-item', stockItem.id ]">{{stockItem.id}}</a></td>
+                <td>{{stockItem.salesPrice}}</td>
+                <td>{{stockItem.amount}}</td>
+                <td>{{stockItem.minStock}}</td>
+                <td>{{stockItem.maxStock}}</td>
+                <td>
+                    <div *ngIf="stockItem.product">
+                        <a [routerLink]="['../product', stockItem.product?.id ]" >{{stockItem.product?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="stockItem.inventory">
+                        <a [routerLink]="['../inventory', stockItem.inventory?.id ]" >{{stockItem.inventory?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../stock-item', stockItem.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'stock-item/'+ stockItem.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'stock-item/'+ stockItem.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "printer",
+            "otherEntityName": "barCodeScanner",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "controller"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180603102201",
+    "entityTableName": "bar_code_scanner_controller",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

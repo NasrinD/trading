@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "printer",
+            "otherEntityName": "printer",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "controller"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180603102159",
+    "entityTableName": "printer_controller",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

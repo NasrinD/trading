@@ -44,6 +44,35 @@ public class CacheConfiguration {
             cm.createCache(org.jhipster.tradingsystem.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(org.jhipster.tradingsystem.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(org.jhipster.tradingsystem.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Store.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashDesk.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashDesk.class.getName() + ".cashiers", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashDeskApplication.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashDeskApplication.class.getName() + ".banks", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashDeskGUI.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashBox.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CashBoxController.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Printer.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.PrinterController.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.BarCodeScanner.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.BarCodeScannerController.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CardReader.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.CardReaderController.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Bank.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Bank.class.getName() + ".customers", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Bank.class.getName() + ".debits", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Bank.class.getName() + ".cashDeskApplications", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Customer.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Customer.class.getName() + ".debits", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Customer.class.getName() + ".receipts", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Debit.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Receipt.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Receipt.class.getName() + ".receiptItems", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.ReceiptItem.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Inventory.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Inventory.class.getName() + ".stockItems", jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.StockItem.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.tradingsystem.domain.Product.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

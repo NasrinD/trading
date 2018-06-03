@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span jhiTranslate="tradingsystemEmApp.store.home.title">Stores</span>
+        <button class="btn btn-primary float-right jh-create-entity create-store" [routerLink]="['/', { outlets: { popup: ['store-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="tradingsystemEmApp.store.home.createLabel">
+            Create new Store
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="stores">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.store.name">Name</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.store.address">Address</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.store.cashDesk">Cash Desk</span></th>
+            <th><span jhiTranslate="tradingsystemEmApp.store.inventory">Inventory</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let store of stores ;trackBy: trackId">
+                <td><a [routerLink]="['../store', store.id ]">{{store.id}}</a></td>
+                <td>{{store.name}}</td>
+                <td>{{store.address}}</td>
+                <td>
+                    <div *ngIf="store.cashDesk">
+                        <a [routerLink]="['../cash-desk', store.cashDesk?.id ]" >{{store.cashDesk?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="store.inventory">
+                        <a [routerLink]="['../inventory', store.inventory?.id ]" >{{store.inventory?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../store', store.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'store/'+ store.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'store/'+ store.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
