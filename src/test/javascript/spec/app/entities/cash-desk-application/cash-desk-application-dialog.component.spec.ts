@@ -11,6 +11,7 @@ import { CashDeskApplicationService } from '../../../../../../main/webapp/app/en
 import { CashDeskApplication } from '../../../../../../main/webapp/app/entities/cash-desk-application/cash-desk-application.model';
 import { InventoryService } from '../../../../../../main/webapp/app/entities/inventory';
 import { BankService } from '../../../../../../main/webapp/app/entities/bank';
+import { CashDeskService } from '../../../../../../main/webapp/app/entities/cash-desk';
 
 describe('Component Tests', () => {
 
@@ -28,6 +29,7 @@ describe('Component Tests', () => {
                 providers: [
                     InventoryService,
                     BankService,
+                    CashDeskService,
                     CashDeskApplicationService
                 ]
             })

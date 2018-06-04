@@ -49,6 +49,13 @@
             </select>
         </div>
         <div class="form-group">
+            <label class="form-control-label" jhiTranslate="tradingsystemEmApp.cashDesk.cashDeskApplication" for="field_cashDeskApplication">Cash Desk Application</label>
+            <select class="form-control" id="field_cashDeskApplication" name="cashDeskApplication" [(ngModel)]="cashDesk.cashDeskApplication">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cashDeskApplicationOption.id === cashDesk.cashDeskApplication?.id ? cashDesk.cashDeskApplication : cashDeskApplicationOption" *ngFor="let cashDeskApplicationOption of cashdeskapplications; trackBy: trackCashDeskApplicationById">{{cashDeskApplicationOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label jhiTranslate="tradingsystemEmApp.cashDesk.cashiers" for="field_cashiers">Cashiers</label>
             <select class="form-control" id="field_cashiers" multiple name="cashiers" [(ngModel)]="cashDesk.cashiers">
                 <option [ngValue]="getSelected(cashDesk.cashiers, userOption)" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>

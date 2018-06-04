@@ -5,6 +5,7 @@ export class CashDeskApplication implements BaseEntity {
         public id?: number,
         public inventory?: BaseEntity,
         public banks?: BaseEntity[],
+        public cashDesk?: BaseEntity,
     ) {
     }
 }

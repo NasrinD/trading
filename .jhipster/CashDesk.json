@@ -42,6 +42,14 @@
             "otherEntityRelationshipName": "cashDesk"
         },
         {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDeskApplication",
+            "otherEntityName": "cashDeskApplication",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
             "relationshipType": "many-to-many",
             "otherEntityRelationshipName": "",
             "relationshipName": "cashiers",

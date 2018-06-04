@@ -16,6 +16,13 @@
             "otherEntityName": "bank",
             "otherEntityField": "id",
             "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cashDeskApplication"
         }
     ],
     "fields": [],

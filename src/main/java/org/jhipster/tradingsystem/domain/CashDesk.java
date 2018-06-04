@@ -46,6 +46,10 @@ public class CashDesk implements Serializable {
     @JoinColumn(unique = true)
     private CardReader cardReader;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private CashDeskApplication cashDeskApplication;
+
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "cash_desk_cashiers",
@@ -129,6 +133,19 @@ public class CashDesk implements Serializable {
 
     public void setCardReader(CardReader cardReader) {
         this.cardReader = cardReader;
+    }
+
+    public CashDeskApplication getCashDeskApplication() {
+        return cashDeskApplication;
+    }
+
+    public CashDesk cashDeskApplication(CashDeskApplication cashDeskApplication) {
+        this.cashDeskApplication = cashDeskApplication;
+        return this;
+    }
+
+    public void setCashDeskApplication(CashDeskApplication cashDeskApplication) {
+        this.cashDeskApplication = cashDeskApplication;
     }
 
     public Set<User> getCashiers() {

@@ -14,6 +14,7 @@ import { CashBoxService } from '../../../../../../main/webapp/app/entities/cash-
 import { CashDeskGUIService } from '../../../../../../main/webapp/app/entities/cash-desk-gui';
 import { BarCodeScannerService } from '../../../../../../main/webapp/app/entities/bar-code-scanner';
 import { CardReaderService } from '../../../../../../main/webapp/app/entities/card-reader';
+import { CashDeskApplicationService } from '../../../../../../main/webapp/app/entities/cash-desk-application';
 import { UserService } from '../../../../../../main/webapp/app/shared';
 import { StoreService } from '../../../../../../main/webapp/app/entities/store';
 
@@ -36,6 +37,7 @@ describe('Component Tests', () => {
                     CashDeskGUIService,
                     BarCodeScannerService,
                     CardReaderService,
+                    CashDeskApplicationService,
                     UserService,
                     StoreService,
                     CashDeskService

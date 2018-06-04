@@ -88,6 +88,7 @@ relationship OneToOne {
 	CashDesk{cashDeskGui} to CashDeskGUI{cashDesk},
 	CashDesk{barCodeScanner} to BarCodeScanner{cashDesk},
 	CashDesk{cardReader} to CardReader{cashDesk},
+	CashDesk{cashDeskApplication} to CashDeskApplication{cashDesk},
 	CashDeskApplication{inventory} to Inventory{cashDeskApplication}
 }
 

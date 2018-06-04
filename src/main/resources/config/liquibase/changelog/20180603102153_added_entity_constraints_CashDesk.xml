@@ -38,6 +38,12 @@
                                  referencedColumnNames="id"
                                  referencedTableName="card_reader"/>
 
+        <addForeignKeyConstraint baseColumnNames="cash_desk_application_id"
+                                 baseTableName="cash_desk"
+                                 constraintName="fk_cash_desk_cash_desk_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cash_desk_application"/>
+
         <addForeignKeyConstraint baseColumnNames="cash_desks_id"
                                  baseTableName="cash_desk_cashiers"
                                  constraintName="fk_cash_desk_cashiers_cash_desks_id"

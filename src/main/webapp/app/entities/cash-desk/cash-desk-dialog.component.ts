@@ -14,6 +14,7 @@ import { CashBox, CashBoxService } from '../cash-box';
 import { CashDeskGUI, CashDeskGUIService } from '../cash-desk-gui';
 import { BarCodeScanner, BarCodeScannerService } from '../bar-code-scanner';
 import { CardReader, CardReaderService } from '../card-reader';
+import { CashDeskApplication, CashDeskApplicationService } from '../cash-desk-application';
 import { User, UserService } from '../../shared';
 import { Store, StoreService } from '../store';
 
@@ -36,6 +37,8 @@ export class CashDeskDialogComponent implements OnInit {
 
     cardreaders: CardReader[];
 
+    cashdeskapplications: CashDeskApplication[];
+
     users: User[];
 
     stores: Store[];
@@ -49,6 +52,7 @@ export class CashDeskDialogComponent implements OnInit {
         private cashDeskGUIService: CashDeskGUIService,
         private barCodeScannerService: BarCodeScannerService,
         private cardReaderService: CardReaderService,
+        private cashDeskApplicationService: CashDeskApplicationService,
         private userService: UserService,
         private storeService: StoreService,
         private eventManager: JhiEventManager
@@ -122,6 +126,19 @@ export class CashDeskDialogComponent implements OnInit {
                         }, (subRes: HttpErrorResponse) => this.onError(subRes.message));
                 }
             }, (res: HttpErrorResponse) => this.onError(res.message));
+        this.cashDeskApplicationService
+            .query({filter: 'cashdesk-is-null'})
+            .subscribe((res: HttpResponse<CashDeskApplication[]>) => {
+                if (!this.cashDesk.cashDeskApplication || !this.cashDesk.cashDeskApplication.id) {
+                    this.cashdeskapplications = res.body;
+                } else {
+                    this.cashDeskApplicationService
+                        .find(this.cashDesk.cashDeskApplication.id)
+                        .subscribe((subRes: HttpResponse<CashDeskApplication>) => {
+                            this.cashdeskapplications = [subRes.body].concat(res.body);
+                        }, (subRes: HttpErrorResponse) => this.onError(subRes.message));
+                }
+            }, (res: HttpErrorResponse) => this.onError(res.message));
         this.userService.query()
             .subscribe((res: HttpResponse<User[]>) => { this.users = res.body; }, (res: HttpErrorResponse) => this.onError(res.message));
         this.storeService.query()
@@ -179,6 +196,10 @@ export class CashDeskDialogComponent implements OnInit {
     }
 
     trackCardReaderById(index: number, item: CardReader) {
+        return item.id;
+    }
+
+    trackCashDeskApplicationById(index: number, item: CashDeskApplication) {
         return item.id;
     }
 

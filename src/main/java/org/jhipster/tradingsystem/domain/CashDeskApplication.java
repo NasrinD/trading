@@ -1,5 +1,6 @@
 package org.jhipster.tradingsystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -35,6 +36,10 @@ public class CashDeskApplication implements Serializable {
                joinColumns = @JoinColumn(name="cash_desk_applications_id", referencedColumnName="id"),
                inverseJoinColumns = @JoinColumn(name="banks_id", referencedColumnName="id"))
     private Set<Bank> banks = new HashSet<>();
+
+    @OneToOne(mappedBy = "cashDeskApplication")
+    @JsonIgnore
+    private CashDesk cashDesk;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -81,6 +86,19 @@ public class CashDeskApplication implements Serializable {
 
     public void setBanks(Set<Bank> banks) {
         this.banks = banks;
+    }
+
+    public CashDesk getCashDesk() {
+        return cashDesk;
+    }
+
+    public CashDeskApplication cashDesk(CashDesk cashDesk) {
+        this.cashDesk = cashDesk;
+        return this;
+    }
+
+    public void setCashDesk(CashDesk cashDesk) {
+        this.cashDesk = cashDesk;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

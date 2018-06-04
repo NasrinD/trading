@@ -17,7 +17,8 @@
                 "title": "Cash Desk Application"
             },
             "inventory": "Inventory",
-            "banks": "Banks"
+            "banks": "Banks",
+            "cashDesk": "Cash Desk"
         }
     }
 }

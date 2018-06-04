@@ -34,6 +34,12 @@
                 <a [routerLink]="['/card-reader', cashDesk.cardReader?.id]">{{cashDesk.cardReader?.id}}</a>
             </div>
         </dd>
+        <dt><span jhiTranslate="tradingsystemEmApp.cashDesk.cashDeskApplication">Cash Desk Application</span></dt>
+        <dd>
+            <div *ngIf="cashDesk.cashDeskApplication">
+                <a [routerLink]="['/cash-desk-application', cashDesk.cashDeskApplication?.id]">{{cashDesk.cashDeskApplication?.id}}</a>
+            </div>
+        </dd>
         <dt><span jhiTranslate="tradingsystemEmApp.cashDesk.cashiers">Cashiers</span></dt>
         <dd>
             <span *ngFor="let cashiers of cashDesk.cashiers; let last = last">

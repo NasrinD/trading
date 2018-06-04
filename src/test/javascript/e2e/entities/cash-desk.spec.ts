@@ -38,6 +38,7 @@ describe('CashDesk e2e test', () => {
         cashDeskDialogPage.cashDeskGuiSelectLastOption();
         cashDeskDialogPage.barCodeScannerSelectLastOption();
         cashDeskDialogPage.cardReaderSelectLastOption();
+        cashDeskDialogPage.cashDeskApplicationSelectLastOption();
         // cashDeskDialogPage.cashiersSelectLastOption();
         cashDeskDialogPage.save();
         expect(cashDeskDialogPage.getSaveButton().isPresent()).toBeFalsy();
@@ -70,6 +71,7 @@ export class CashDeskDialogPage {
     cashDeskGuiSelect = element(by.css('select#field_cashDeskGui'));
     barCodeScannerSelect = element(by.css('select#field_barCodeScanner'));
     cardReaderSelect = element(by.css('select#field_cardReader'));
+    cashDeskApplicationSelect = element(by.css('select#field_cashDeskApplication'));
     cashiersSelect = element(by.css('select#field_cashiers'));
 
     getModalTitle() {
@@ -154,6 +156,22 @@ export class CashDeskDialogPage {
 
     getCardReaderSelectedOption = function() {
         return this.cardReaderSelect.element(by.css('option:checked')).getText();
+    };
+
+    cashDeskApplicationSelectLastOption = function() {
+        this.cashDeskApplicationSelect.all(by.tagName('option')).last().click();
+    };
+
+    cashDeskApplicationSelectOption = function(option) {
+        this.cashDeskApplicationSelect.sendKeys(option);
+    };
+
+    getCashDeskApplicationSelect = function() {
+        return this.cashDeskApplicationSelect;
+    };
+
+    getCashDeskApplicationSelectedOption = function() {
+        return this.cashDeskApplicationSelect.element(by.css('option:checked')).getText();
     };
 
     cashiersSelectLastOption = function() {

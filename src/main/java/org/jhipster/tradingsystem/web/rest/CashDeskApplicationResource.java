@@ -17,6 +17,8 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing CashDeskApplication.
@@ -80,11 +82,19 @@ public class CashDeskApplicationResource {
     /**
      * GET  /cash-desk-applications : get all the cashDeskApplications.
      *
+     * @param filter the filter of the request
      * @return the ResponseEntity with status 200 (OK) and the list of cashDeskApplications in body
      */
     @GetMapping("/cash-desk-applications")
     @Timed
-    public List<CashDeskApplication> getAllCashDeskApplications() {
+    public List<CashDeskApplication> getAllCashDeskApplications(@RequestParam(required = false) String filter) {
+        if ("cashdesk-is-null".equals(filter)) {
+            log.debug("REST request to get all CashDeskApplications where cashDesk is null");
+            return StreamSupport
+                .stream(cashDeskApplicationRepository.findAll().spliterator(), false)
+                .filter(cashDeskApplication -> cashDeskApplication.getCashDesk() == null)
+                .collect(Collectors.toList());
+        }
         log.debug("REST request to get all CashDeskApplications");
         return cashDeskApplicationRepository.findAllWithEagerRelationships();
         }

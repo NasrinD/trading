@@ -21,6 +21,7 @@
             "cashDeskGui": "Cash Desk Gui",
             "barCodeScanner": "Bar Code Scanner",
             "cardReader": "Card Reader",
+            "cashDeskApplication": "Cash Desk Application",
             "cashiers": "Cashiers",
             "store": "Store"
         }

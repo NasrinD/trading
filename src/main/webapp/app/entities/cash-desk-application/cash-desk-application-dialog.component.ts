@@ -11,6 +11,7 @@ import { CashDeskApplicationPopupService } from './cash-desk-application-popup.s
 import { CashDeskApplicationService } from './cash-desk-application.service';
 import { Inventory, InventoryService } from '../inventory';
 import { Bank, BankService } from '../bank';
+import { CashDesk, CashDeskService } from '../cash-desk';
 
 @Component({
     selector: 'jhi-cash-desk-application-dialog',
@@ -25,12 +26,15 @@ export class CashDeskApplicationDialogComponent implements OnInit {
 
     banks: Bank[];
 
+    cashdesks: CashDesk[];
+
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
         private cashDeskApplicationService: CashDeskApplicationService,
         private inventoryService: InventoryService,
         private bankService: BankService,
+        private cashDeskService: CashDeskService,
         private eventManager: JhiEventManager
     ) {
     }
@@ -52,6 +56,8 @@ export class CashDeskApplicationDialogComponent implements OnInit {
             }, (res: HttpErrorResponse) => this.onError(res.message));
         this.bankService.query()
             .subscribe((res: HttpResponse<Bank[]>) => { this.banks = res.body; }, (res: HttpErrorResponse) => this.onError(res.message));
+        this.cashDeskService.query()
+            .subscribe((res: HttpResponse<CashDesk[]>) => { this.cashdesks = res.body; }, (res: HttpErrorResponse) => this.onError(res.message));
     }
 
     clear() {
@@ -93,6 +99,10 @@ export class CashDeskApplicationDialogComponent implements OnInit {
     }
 
     trackBankById(index: number, item: Bank) {
+        return item.id;
+    }
+
+    trackCashDeskById(index: number, item: CashDesk) {
         return item.id;
     }
 
