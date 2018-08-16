@@ -1,3 +1,4 @@
+import { MyDeskModule } from './my-desk/my-desk.module';
 import './vendor.ts';
 
 import { NgModule, Injector } from '@angular/core';
@@ -38,6 +39,7 @@ import {
         TradingsystemEmAdminModule,
         TradingsystemEmAccountModule,
         TradingsystemEmEntityModule,
+        MyDeskModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
