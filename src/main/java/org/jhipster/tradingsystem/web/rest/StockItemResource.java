@@ -1,8 +1,10 @@
 package org.jhipster.tradingsystem.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import org.jhipster.tradingsystem.domain.StockItem;
 
+import org.jhipster.tradingsystem.domain.Product;
+import org.jhipster.tradingsystem.domain.StockItem;
+import org.jhipster.tradingsystem.repository.ProductRepository;
 import org.jhipster.tradingsystem.repository.StockItemRepository;
 import org.jhipster.tradingsystem.web.rest.errors.BadRequestAlertException;
 import org.jhipster.tradingsystem.web.rest.util.HeaderUtil;
@@ -31,9 +33,11 @@ public class StockItemResource {
     private static final String ENTITY_NAME = "stockItem";
 
     private final StockItemRepository stockItemRepository;
+    private final ProductRepository productRepository;
 
-    public StockItemResource(StockItemRepository stockItemRepository) {
+    public StockItemResource(StockItemRepository stockItemRepository, ProductRepository productRepository) {
         this.stockItemRepository = stockItemRepository;
+        this.productRepository = productRepository;
     }
 
     /**
@@ -104,6 +108,21 @@ public class StockItemResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stockItem));
     }
 
+    /**
+     * GET  /stock-items/ : get the "product" stockItem.
+     *
+     * @param productId the id of the product of this stockItem to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the stockItem, or with status 404 (Not Found)
+     */
+    @GetMapping(value = "/stock-items", params = "productId")
+    @Timed
+    public ResponseEntity<StockItem> getStockItemByProduct(@RequestParam Long productId) {
+        log.debug("REST request to get StockItem : {}", productId);
+        Product product = productRepository.findOne(productId);
+        StockItem stockItem = stockItemRepository.findByProduct(product);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stockItem));
+    }
+    
     /**
      * DELETE  /stock-items/:id : delete the "id" stockItem.
      *

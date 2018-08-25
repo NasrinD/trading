@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { SERVER_API_URL } from '../../app.constants';
 
@@ -29,6 +29,14 @@ export class ProductService {
 
     find(id: number): Observable<EntityResponseType> {
         return this.http.get<Product>(`${this.resourceUrl}/${id}`, { observe: 'response'})
+            .map((res: EntityResponseType) => this.convertResponse(res));
+    }
+
+    findByBarCode(barCode: number): Observable<EntityResponseType> {
+        const params = new HttpParams()
+            .set('barCode', barCode.toString());
+        console.log(params.toString());
+        return this.http.get<Product>(this.resourceUrl, { params, observe: 'response'})
             .map((res: EntityResponseType) => this.convertResponse(res));
     }
 

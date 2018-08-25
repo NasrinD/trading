@@ -31,16 +31,16 @@ spring:
     jackson:
         serialization.indent_output: true
     datasource:
-        type: org.postgresql.ds.PGSimpleDataSource
-        url: jdbc:postgresql://localhost:5432/postgres
-        username: postgres
-        password: kintamani1
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:mem:tradingsystem-em;DB_CLOSE_DELAY=-1
+        username: tradingsystem-em
+        password:
     h2:
         console:
             enabled: false
     jpa:
-        database-platform: org.hibernate.dialect.PostgreSQL82Dialect
-        database: POSTGRESQL
+        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
+        database: H2
         show-sql: true
         properties:
             hibernate.id.new_generator_mappings: true

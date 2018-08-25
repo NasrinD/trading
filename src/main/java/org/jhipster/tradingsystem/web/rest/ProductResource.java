@@ -115,6 +115,20 @@ public class ProductResource {
     }
 
     /**
+     * GET  /products/ : get the "barCode" product.
+     *
+     * @param barCode the barCode of the product to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the product, or with status 404 (Not Found)
+     */
+    @GetMapping(value = "/products", params = "barCode")
+    @Timed
+    public ResponseEntity<Product> getProductByBarCode(@RequestParam Long barCode) {
+        log.debug("REST request to get Product : {}", barCode);
+        Product product = productRepository.findByBarCode(barCode);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(product));
+    }
+    
+    /**
      * DELETE  /products/:id : delete the "id" product.
      *
      * @param id the id of the product to delete

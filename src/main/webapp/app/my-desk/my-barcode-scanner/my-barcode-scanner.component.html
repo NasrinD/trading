@@ -1,3 +1,45 @@
-<h5>MyBarCodeScanner</h5>
-<input type="text">
-<button>Scan Item</button>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h5>MyCashDeskGUI</h5>
+        {{product?.name}} , {{product?.purchasePrice}}
+        </br></br>
+        <h5>MyPrinter</h5>
+        <input type="text">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+            <tr *ngFor="let item of items">
+                <td>{{item?.name}}</td>
+                <td>{{item?.purchasePrice}}</td>
+            </tr>
+        </table>
+      </div>
+      <div class="col-sm">
+        <h5>MyCashBox</h5>
+        <button>Start a new Sale</button>
+        </br></br>
+        <input type="text">
+        <button>Enter the Price</button>
+        </br></br>
+        <button>Bar Payment</button>
+        <button>Card Payment</button>
+        </br></br>
+        <button>Finish the Sale</button>
+        </br></br>
+        <Label>CashBox Status: </label>
+      </div>
+      <div class="col-sm">
+        <h5>MyBarCodeScanner</h5>
+        <input #barCode type="text">
+        <button (click)="search(barCode.value)">Scan Item</button>
+        </br></br>
+        <h5>MyCardReader</h5>
+        <button>Scan Card</button>
+        <input type="text">
+        <button>Enter Pin</button>
+      </div>
+    </div>
+  </div>

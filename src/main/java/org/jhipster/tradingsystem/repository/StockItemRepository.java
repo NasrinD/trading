@@ -1,9 +1,9 @@
 package org.jhipster.tradingsystem.repository;
 
+import org.jhipster.tradingsystem.domain.Product;
 import org.jhipster.tradingsystem.domain.StockItem;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import org.springframework.data.jpa.repository.*;
 
 
 /**
@@ -12,5 +12,5 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface StockItemRepository extends JpaRepository<StockItem, Long> {
-
+	public StockItem findByProduct(Product product);
 }
