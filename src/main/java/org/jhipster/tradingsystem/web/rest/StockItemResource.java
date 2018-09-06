@@ -55,6 +55,11 @@ public class StockItemResource {
             throw new BadRequestAlertException("A new stockItem cannot already have an ID", ENTITY_NAME, "idexists");
         }
         StockItem result = stockItemRepository.save(stockItem);
+        Product product = productRepository.findOne(stockItem.getProduct().getId());
+        if (product != null) {
+        	product.setStockItem(stockItem);
+        	productRepository.save(product);
+        }
         return ResponseEntity.created(new URI("/api/stock-items/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);

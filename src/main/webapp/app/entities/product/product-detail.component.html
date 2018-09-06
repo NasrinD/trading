@@ -16,6 +16,12 @@
         <dd>
             <span>{{product.purchasePrice}}</span>
         </dd>
+        <dt><span jhiTranslate="tradingsystemEmApp.product.stockItem">StockItem</span></dt>
+        <dd>
+            <div *ngIf="product.stockItem">
+                <a [routerLink]="['/stockItem', product.stockItem?.id]">{{product.stockItem?.id}}</a>
+            </div>
+        </dd>
     </dl>
 
     <button type="submit"

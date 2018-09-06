@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { SERVER_API_URL } from '../../app.constants';
 
@@ -22,6 +22,8 @@ export class StockItemService {
     }
 
     update(stockItem: StockItem): Observable<EntityResponseType> {
+        console.log('STOCKITEMSERVICE CALLED! StockItemAmount: ' + stockItem.amount);
+        console.log('this.resourceUrl: ' + this.resourceUrl);
         const copy = this.convert(stockItem);
         return this.http.put<StockItem>(this.resourceUrl, copy, { observe: 'response' })
             .map((res: EntityResponseType) => this.convertResponse(res));
@@ -29,6 +31,14 @@ export class StockItemService {
 
     find(id: number): Observable<EntityResponseType> {
         return this.http.get<StockItem>(`${this.resourceUrl}/${id}`, { observe: 'response'})
+            .map((res: EntityResponseType) => this.convertResponse(res));
+    }
+
+    findByProduct(productId: number): Observable<EntityResponseType> {
+        const params = new HttpParams()
+            .set('productId', productId.toString());
+        console.log(params.toString());
+        return this.http.get<StockItem>(this.resourceUrl, { params, observe: 'response'})
             .map((res: EntityResponseType) => this.convertResponse(res));
     }
 

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyDeskComponent } from './my-desk.component';
@@ -12,7 +13,8 @@ import { MyPrinterComponent } from './my-printer/my-printer.component';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(myDeskRoute)
+    RouterModule.forChild(myDeskRoute),
+    FormsModule
   ],
   declarations: [
     MyDeskComponent,

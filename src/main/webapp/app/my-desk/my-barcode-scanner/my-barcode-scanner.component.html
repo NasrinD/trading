@@ -1,45 +1,64 @@
 <div class="container">
     <div class="row">
       <div class="col-sm">
-        <h5>MyCashDeskGUI</h5>
-        {{product?.name}} , {{product?.purchasePrice}}
-        </br></br>
-        <h5>MyPrinter</h5>
-        <input type="text">
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>Price</td>
-            </tr>
-            <tr *ngFor="let item of items">
-                <td>{{item?.name}}</td>
-                <td>{{item?.purchasePrice}}</td>
-            </tr>
-        </table>
-      </div>
-      <div class="col-sm">
         <h5>MyCashBox</h5>
-        <button>Start a new Sale</button>
+        <Label>CashBox Status: {{cashBoxStatus}}</label>
+        </br></br>          
+        <button (click)="startNewSale()">Start a new Sale</button>
         </br></br>
-        <input type="text">
-        <button>Enter the Price</button>
+        <button (click)="finishSale()">Finish the Sale</button>
         </br></br>
-        <button>Bar Payment</button>
-        <button>Card Payment</button>
+        <button (click)="chooseBar()">Bar Payment</button>
+        <button (click)="chooseCard()">Card Payment</button>
+        </br></br>                
+        <input #receivedMoney type="text">
+        <button (click)="receiveMoney(receivedMoney.value)">Receive Money</button>
         </br></br>
-        <button>Finish the Sale</button>
-        </br></br>
-        <Label>CashBox Status: </label>
+        <button (click)="closeCashBox()">Close CashBox</button>
       </div>
       <div class="col-sm">
         <h5>MyBarCodeScanner</h5>
-        <input #barCode type="text">
-        <button (click)="search(barCode.value)">Scan Item</button>
+        <input #barCodeText type="text" [(ngModel)]="barCode">
+        <button (click)="scanBarCode(barCodeText.value)">Scan Item</button>
         </br></br>
         <h5>MyCardReader</h5>
         <button>Scan Card</button>
         <input type="text">
         <button>Enter Pin</button>
+      </div>      
+      <div class="col-sm">
+        <h5>MyCashDeskGUI</h5>
+        <table>
+          <tr>
+            <td>ProductName,</td>
+            <td>SalesPrice</td>
+          </tr>
+          <tr>
+            <td>{{product?.name}}</td>
+            <td>{{product?.stockItem?.salesPrice}}</td>
+          </tr>
+        </table>
+        </br></br>
+        <h5>MyPrinter</h5>
+        <table>
+            <tr>
+                <td>Name,</td>
+                <td>StockItemId,</td>
+                <td>SalesPrice,</td>
+                <td>Inventory</td>
+            </tr>
+            <tr *ngFor="let purchasedProduct of purchasedProducts">
+                <td>{{purchasedProduct?.name}}</td>
+                <td>{{purchasedProduct?.stockItem?.id}}</td>
+                <td>{{purchasedProduct?.stockItem?.salesPrice}}</td>
+                <td>{{purchasedProduct?.stockItem?.amount}}</td>
+            </tr>
+            <tr>
+              <td>
+                Total Price: {{totalPrice}}
+              </td>
+            </tr>
+        </table>
       </div>
     </div>
   </div>
