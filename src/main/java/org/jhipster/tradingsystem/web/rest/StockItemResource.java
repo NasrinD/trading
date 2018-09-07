@@ -1,25 +1,31 @@
 package org.jhipster.tradingsystem.web.rest;
 
-import com.codahale.metrics.annotation.Timed;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
 
-import org.jhipster.tradingsystem.domain.Product;
+import javax.validation.Valid;
+
 import org.jhipster.tradingsystem.domain.StockItem;
-import org.jhipster.tradingsystem.repository.ProductRepository;
 import org.jhipster.tradingsystem.repository.StockItemRepository;
 import org.jhipster.tradingsystem.web.rest.errors.BadRequestAlertException;
 import org.jhipster.tradingsystem.web.rest.util.HeaderUtil;
-import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
+import com.codahale.metrics.annotation.Timed;
 
-import java.util.List;
-import java.util.Optional;
+import io.github.jhipster.web.util.ResponseUtil;
 
 /**
  * REST controller for managing StockItem.
@@ -33,11 +39,9 @@ public class StockItemResource {
     private static final String ENTITY_NAME = "stockItem";
 
     private final StockItemRepository stockItemRepository;
-    private final ProductRepository productRepository;
 
-    public StockItemResource(StockItemRepository stockItemRepository, ProductRepository productRepository) {
+    public StockItemResource(StockItemRepository stockItemRepository) {
         this.stockItemRepository = stockItemRepository;
-        this.productRepository = productRepository;
     }
 
     /**
@@ -55,11 +59,6 @@ public class StockItemResource {
             throw new BadRequestAlertException("A new stockItem cannot already have an ID", ENTITY_NAME, "idexists");
         }
         StockItem result = stockItemRepository.save(stockItem);
-        Product product = productRepository.findOne(stockItem.getProduct().getId());
-        if (product != null) {
-        	product.setStockItem(stockItem);
-        	productRepository.save(product);
-        }
         return ResponseEntity.created(new URI("/api/stock-items/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -110,21 +109,6 @@ public class StockItemResource {
     public ResponseEntity<StockItem> getStockItem(@PathVariable Long id) {
         log.debug("REST request to get StockItem : {}", id);
         StockItem stockItem = stockItemRepository.findOne(id);
-        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stockItem));
-    }
-
-    /**
-     * GET  /stock-items/ : get the "product" stockItem.
-     *
-     * @param productId the id of the product of this stockItem to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the stockItem, or with status 404 (Not Found)
-     */
-    @GetMapping(value = "/stock-items", params = "productId")
-    @Timed
-    public ResponseEntity<StockItem> getStockItemByProduct(@RequestParam Long productId) {
-        log.debug("REST request to get StockItem : {}", productId);
-        Product product = productRepository.findOne(productId);
-        StockItem stockItem = stockItemRepository.findByProduct(product);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stockItem));
     }
     
