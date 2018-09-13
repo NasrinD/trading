@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface StockItemRepository extends JpaRepository<StockItem, Long> {
-	public StockItem findByProduct(Product product);
+	
 }

@@ -34,14 +34,6 @@ export class StockItemService {
             .map((res: EntityResponseType) => this.convertResponse(res));
     }
 
-    findByProduct(productId: number): Observable<EntityResponseType> {
-        const params = new HttpParams()
-            .set('productId', productId.toString());
-        console.log(params.toString());
-        return this.http.get<StockItem>(this.resourceUrl, { params, observe: 'response'})
-            .map((res: EntityResponseType) => this.convertResponse(res));
-    }
-
     query(req?: any): Observable<HttpResponse<StockItem[]>> {
         const options = createRequestOption(req);
         return this.http.get<StockItem[]>(this.resourceUrl, { params: options, observe: 'response' })
