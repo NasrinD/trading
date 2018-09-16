@@ -58,30 +58,6 @@ export class MyCashBoxComponent implements OnInit {
 
   finishSale() {
     this.cashBoxStatus = 'New Sale Finished!';
-    // for (const item of this.purchasedItems) {
-    //   if (item.id !== undefined) {
-    //     console.log('stockItemId: ' + item.id + ' stockItemAmount: ' + item.amount);
-    //     this.stockItemService.find(item.id)
-    //       .subscribe((stockItemResponse: HttpResponse<StockItem>) => {
-    //         this.stockItemToUpdate = stockItemResponse.body;
-    //         console.log('STOCKITEMTOUPDATE: ' + this.stockItemToUpdate.id);
-    //         if (this.stockItemToUpdate.amount !== 0) {
-    //           this.stockItemToUpdate.amount -= 1;
-    //           console.log('NEW AMOUNT: ' + this.stockItemToUpdate.amount);
-    //           this.stockItemService.update(this.stockItemToUpdate)
-    //             .subscribe((res: HttpResponse<StockItem>) =>
-    //               this.onSaveSuccess(res.body));
-    //         } else {
-    //           // this.stockItemService.delete(this.stockItemToUpdate.id).subscribe((response) => {
-    //           //   this.eventManager.broadcast({
-    //           //       name: 'stockItemListModification',
-    //           //       content: 'Deleted an stockItem'
-    //           //   });
-    //           // });
-    //         }
-    //     });
-    //   }
-    // }
   }
 
   closeCashBox() {
