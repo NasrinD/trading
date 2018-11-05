@@ -1,6 +1,6 @@
 package org.jhipster.tradingsystem.web.rest;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.config.CacheConfiguration;
 import org.jhipster.tradingsystem.domain.Authority;
 import org.jhipster.tradingsystem.domain.User;
@@ -44,7 +44,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 public class UserResourceIntTest {
 
     private static final String DEFAULT_LOGIN = "johndoe";

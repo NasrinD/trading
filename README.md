@@ -1,4 +1,4 @@
-# tradingsystem-em
+# tradingsystem-mo
 This application was generated using JHipster 4.14.1, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.1](http://www.jhipster.tech/documentation-archive/v4.14.1).
 
 ## Development
@@ -89,7 +89,7 @@ will generate few files:
 
 ## Building for production
 
-To optimize the tradingsystem-em application for production, run:
+To optimize the tradingsystem-mo application for production, run:
 
     ./mvnw -Pprod clean package
 

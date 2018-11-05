@@ -5,7 +5,7 @@ import locale from '@angular/common/locales/en';
 
 import { WindowRef } from './tracker/window.service';
 import {
-    TradingsystemEmSharedLibsModule,
+    TradingsystemMoSharedLibsModule,
     JhiLanguageHelper,
     FindLanguageFromKeyPipe,
     JhiAlertComponent,
@@ -14,7 +14,7 @@ import {
 
 @NgModule({
     imports: [
-        TradingsystemEmSharedLibsModule
+        TradingsystemMoSharedLibsModule
     ],
     declarations: [
         FindLanguageFromKeyPipe,
@@ -31,13 +31,13 @@ import {
         },
     ],
     exports: [
-        TradingsystemEmSharedLibsModule,
+        TradingsystemMoSharedLibsModule,
         FindLanguageFromKeyPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]
 })
-export class TradingsystemEmSharedCommonModule {
+export class TradingsystemMoSharedCommonModule {
     constructor() {
         registerLocaleData(locale);
     }

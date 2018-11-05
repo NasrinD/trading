@@ -1,7 +1,7 @@
 package org.jhipster.tradingsystem.web.rest;
 
 import org.jhipster.tradingsystem.config.Constants;
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.domain.Authority;
 import org.jhipster.tradingsystem.domain.PersistentToken;
 import org.jhipster.tradingsystem.domain.User;
@@ -51,7 +51,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AccountResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 public class AccountResourceIntTest {
 
     @Autowired

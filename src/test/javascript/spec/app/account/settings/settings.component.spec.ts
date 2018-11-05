@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable } from 'rxjs/Observable';
 
-import { TradingsystemEmTestModule } from '../../../test.module';
+import { TradingsystemMoTestModule } from '../../../test.module';
 import { Principal, AccountService } from '../../../../../../main/webapp/app/shared';
 import { SettingsComponent } from '../../../../../../main/webapp/app/account/settings/settings.component';
 import { JhiTrackerService } from '../../../../../../main/webapp/app/shared/tracker/tracker.service';
@@ -18,7 +18,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [TradingsystemEmTestModule],
+                imports: [TradingsystemMoTestModule],
                 declarations: [SettingsComponent],
                 providers: [
                     {

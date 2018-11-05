@@ -1,6 +1,6 @@
 package org.jhipster.tradingsystem.web.rest;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.config.audit.AuditEventConverter;
 import org.jhipster.tradingsystem.domain.PersistentAuditEvent;
 import org.jhipster.tradingsystem.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 @Transactional
 public class AuditResourceIntTest {
 

@@ -2,8 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    TradingsystemEmSharedLibsModule,
-    TradingsystemEmSharedCommonModule,
+    TradingsystemMoSharedLibsModule,
+    TradingsystemMoSharedCommonModule,
     CSRFService,
     AuthServerProvider,
     AccountService,
@@ -19,8 +19,8 @@ import {
 
 @NgModule({
     imports: [
-        TradingsystemEmSharedLibsModule,
-        TradingsystemEmSharedCommonModule
+        TradingsystemMoSharedLibsModule,
+        TradingsystemMoSharedCommonModule
     ],
     declarations: [
         JhiLoginModalComponent,
@@ -40,7 +40,7 @@ import {
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
-        TradingsystemEmSharedCommonModule,
+        TradingsystemMoSharedCommonModule,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
         DatePipe
@@ -48,4 +48,4 @@ import {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class TradingsystemEmSharedModule {}
+export class TradingsystemMoSharedModule {}

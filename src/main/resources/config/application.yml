@@ -26,7 +26,7 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: tradingsystem-em
+        name: tradingsystem-mo
     profiles:
         # The commented value for `active` can be replaced with valid Spring profiles to load.
         # Otherwise, it will be filled in by maven when building the WAR file
@@ -81,11 +81,11 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: tradingsystem-em@localhost
+        from: tradingsystem-mo@localhost
     swagger:
         default-include-pattern: /api/.*
-        title: tradingsystem-em API
-        description: tradingsystem-em API documentation
+        title: tradingsystem-mo API
+        description: tradingsystem-mo API documentation
         version: 0.0.1
         terms-of-service-url:
         contact-name:

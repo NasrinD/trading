@@ -1,4 +1,3 @@
-import { MyDeskModule } from './my-desk/my-desk.module';
 import './vendor.ts';
 
 import { NgModule, Injector } from '@angular/core';
@@ -10,12 +9,12 @@ import { JhiEventManager } from 'ng-jhipster';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { TradingsystemEmSharedModule, UserRouteAccessService } from './shared';
-import { TradingsystemEmAppRoutingModule} from './app-routing.module';
-import { TradingsystemEmHomeModule } from './home/home.module';
-import { TradingsystemEmAdminModule } from './admin/admin.module';
-import { TradingsystemEmAccountModule } from './account/account.module';
-import { TradingsystemEmEntityModule } from './entities/entity.module';
+import { TradingsystemMoSharedModule, UserRouteAccessService } from './shared';
+import { TradingsystemMoAppRoutingModule} from './app-routing.module';
+import { TradingsystemMoHomeModule } from './home/home.module';
+import { TradingsystemMoAdminModule } from './admin/admin.module';
+import { TradingsystemMoAccountModule } from './account/account.module';
+import { TradingsystemMoEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from './shared/auth/state-storage.service';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -32,14 +31,13 @@ import {
 @NgModule({
     imports: [
         BrowserModule,
-        TradingsystemEmAppRoutingModule,
+        TradingsystemMoAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-        TradingsystemEmSharedModule,
-        TradingsystemEmHomeModule,
-        TradingsystemEmAdminModule,
-        TradingsystemEmAccountModule,
-        TradingsystemEmEntityModule,
-        MyDeskModule
+        TradingsystemMoSharedModule,
+        TradingsystemMoHomeModule,
+        TradingsystemMoAdminModule,
+        TradingsystemMoAccountModule,
+        TradingsystemMoEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -82,4 +80,4 @@ import {
     ],
     bootstrap: [ JhiMainComponent ]
 })
-export class TradingsystemEmAppModule {}
+export class TradingsystemMoAppModule {}

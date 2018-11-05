@@ -1,7 +1,7 @@
 package org.jhipster.tradingsystem.service;
 import org.jhipster.tradingsystem.config.Constants;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;
@@ -30,7 +30,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 public class MailServiceIntTest {
 
     @Autowired

@@ -16,14 +16,14 @@
 
 spring:
     application:
-        name: tradingsystem-em
+        name: tradingsystem-mo
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
         type: simple
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:tradingsystem-em;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:tradingsystem-mo;DB_CLOSE_DELAY=-1
         name:
         username:
         password:

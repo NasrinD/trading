@@ -1,32 +1,12 @@
 {
     "global": {
-        "title": "Tradingsystem-em",
+        "title": "Tradingsystem-mo",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
-                "store": "Store",
-                "cashDesk": "Cash Desk",
-                "cashDeskApplication": "Cash Desk Application",
-                "cashDeskGui": "Cash Desk GUI",
-                "cashBox": "Cash Box",
-                "cashBoxController": "Cash Box Controller",
-                "printer": "Printer",
-                "printerController": "Printer Controller",
-                "barCodeScanner": "Bar Code Scanner",
-                "barCodeScannerController": "Bar Code Scanner Controller",
-                "cardReader": "Card Reader",
-                "cardReaderController": "Card Reader Controller",
-                "bank": "Bank",
-                "customer": "Customer",
-                "debit": "Debit",
-                "receipt": "Receipt",
-                "receiptItem": "Receipt Item",
-                "inventory": "Inventory",
-                "stockItem": "Stock Item",
-                "product": "Product",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

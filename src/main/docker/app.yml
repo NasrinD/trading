@@ -1,14 +1,14 @@
 version: '2'
 services:
-    tradingsystem-em-app:
-        image: tradingsystem-em
+    tradingsystem-mo-app:
+        image: tradingsystem-mo
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://tradingsystem-em-postgresql:5432/tradingsystem-em
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://tradingsystem-mo-postgresql:5432/tradingsystem-mo
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
             - 8080:8080
-    tradingsystem-em-postgresql:
+    tradingsystem-mo-postgresql:
         extends:
             file: postgresql.yml
-            service: tradingsystem-em-postgresql
+            service: tradingsystem-mo-postgresql

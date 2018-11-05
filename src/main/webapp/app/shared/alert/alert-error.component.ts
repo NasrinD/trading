@@ -22,7 +22,7 @@ export class JhiAlertErrorComponent implements OnDestroy {
     constructor(private alertService: JhiAlertService, private eventManager: JhiEventManager, private translateService: TranslateService) {
         this.alerts = [];
 
-        this.cleanHttpErrorListener = eventManager.subscribe('tradingsystemEmApp.httpError', (response) => {
+        this.cleanHttpErrorListener = eventManager.subscribe('tradingsystemMoApp.httpError', (response) => {
             let i;
             const httpErrorResponse = response.content;
             switch (httpErrorResponse.status) {
@@ -51,7 +51,7 @@ export class JhiAlertErrorComponent implements OnDestroy {
                             const fieldError = fieldErrors[i];
                             // convert 'something[14].other[4].id' to 'something[].other[].id' so translations can be written to it
                             const convertedField = fieldError.field.replace(/\[\d*\]/g, '[]');
-                            const fieldName = translateService.instant('tradingsystemEmApp.' +
+                            const fieldName = translateService.instant('tradingsystemMoApp.' +
                                 fieldError.objectName + '.' + convertedField);
                             this.addErrorAlert(
                                 'Error on field "' + fieldName + '"', 'error.' + fieldError.message, { fieldName });

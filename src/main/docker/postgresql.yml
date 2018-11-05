@@ -1,11 +1,11 @@
 version: '2'
 services:
-    tradingsystem-em-postgresql:
+    tradingsystem-mo-postgresql:
         image: postgres:9.6.5
         # volumes:
-        #     - ~/volumes/jhipster/tradingsystem-em/postgresql/:/var/lib/postgresql/data/
+        #     - ~/volumes/jhipster/tradingsystem-mo/postgresql/:/var/lib/postgresql/data/
         environment:
-            - POSTGRES_USER=tradingsystem-em
+            - POSTGRES_USER=tradingsystem-mo
             - POSTGRES_PASSWORD=
         ports:
             - 5432:5432

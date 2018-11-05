@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "4.14.1",
-    "baseName": "tradingsystem-em",
+    "baseName": "tradingsystem-mo",
     "packageName": "org.jhipster.tradingsystem",
     "packageFolder": "org/jhipster/tradingsystem",
     "serverPort": "8080",

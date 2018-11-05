@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { TradingsystemEmSharedModule } from '../shared';
+import { TradingsystemMoSharedModule } from '../shared';
 
 import {
     Register,
@@ -23,7 +23,7 @@ import {
 
 @NgModule({
     imports: [
-        TradingsystemEmSharedModule,
+        TradingsystemMoSharedModule,
         RouterModule.forChild(accountState)
     ],
     declarations: [
@@ -46,4 +46,4 @@ import {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class TradingsystemEmAccountModule {}
+export class TradingsystemMoAccountModule {}

@@ -1,6 +1,6 @@
 package org.jhipster.tradingsystem.web.rest;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.web.rest.vm.LoggerVM;
 import ch.qos.logback.classic.AsyncAppender;
 import ch.qos.logback.classic.LoggerContext;
@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see LogsResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 public class LogsResourceIntTest {
 
     private MockMvc restLogsMockMvc;

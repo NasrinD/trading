@@ -11,15 +11,15 @@ public final class HeaderUtil {
 
     private static final Logger log = LoggerFactory.getLogger(HeaderUtil.class);
 
-    private static final String APPLICATION_NAME = "tradingsystemEmApp";
+    private static final String APPLICATION_NAME = "tradingsystemMoApp";
 
     private HeaderUtil() {
     }
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-tradingsystemEmApp-alert", message);
-        headers.add("X-tradingsystemEmApp-params", param);
+        headers.add("X-tradingsystemMoApp-alert", message);
+        headers.add("X-tradingsystemMoApp-params", param);
         return headers;
     }
 
@@ -38,8 +38,8 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity processing failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-tradingsystemEmApp-error", "error." + errorKey);
-        headers.add("X-tradingsystemEmApp-params", entityName);
+        headers.add("X-tradingsystemMoApp-error", "error." + errorKey);
+        headers.add("X-tradingsystemMoApp-params", entityName);
         return headers;
     }
 }

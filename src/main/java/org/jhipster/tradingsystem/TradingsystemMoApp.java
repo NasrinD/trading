@@ -24,18 +24,18 @@ import java.util.Collection;
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class TradingsystemEmApp {
+public class TradingsystemMoApp {
 
-    private static final Logger log = LoggerFactory.getLogger(TradingsystemEmApp.class);
+    private static final Logger log = LoggerFactory.getLogger(TradingsystemMoApp.class);
 
     private final Environment env;
 
-    public TradingsystemEmApp(Environment env) {
+    public TradingsystemMoApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes tradingsystem-em.
+     * Initializes tradingsystem-mo.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -61,7 +61,7 @@ public class TradingsystemEmApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(TradingsystemEmApp.class);
+        SpringApplication app = new SpringApplication(TradingsystemMoApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";

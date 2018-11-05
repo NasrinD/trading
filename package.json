@@ -1,7 +1,7 @@
 {
-  "name": "tradingsystem-em",
+  "name": "tradingsystem-mo",
   "version": "0.0.0",
-  "description": "Description for tradingsystem-em",
+  "description": "Description for tradingsystem-mo",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

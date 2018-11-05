@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JhiTrackerService } from './../shared/tracker/tracker.service';
 
-import { TradingsystemEmSharedModule } from '../shared';
+import { TradingsystemMoSharedModule } from '../shared';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import {
@@ -34,7 +34,7 @@ import {
 
 @NgModule({
     imports: [
-        TradingsystemEmSharedModule,
+        TradingsystemMoSharedModule,
         RouterModule.forChild(adminState),
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],
@@ -74,4 +74,4 @@ import {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class TradingsystemEmAdminModule {}
+export class TradingsystemMoAdminModule {}

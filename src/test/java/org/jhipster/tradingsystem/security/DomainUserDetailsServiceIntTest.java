@@ -1,6 +1,6 @@
 package org.jhipster.tradingsystem.security;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.domain.User;
 import org.jhipster.tradingsystem.repository.UserRepository;
 
@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see DomainUserDetailsService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 @Transactional
 public class DomainUserDetailsServiceIntTest {
 

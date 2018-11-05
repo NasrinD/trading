@@ -1,6 +1,6 @@
 package org.jhipster.tradingsystem.service;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.config.Constants;
 import org.jhipster.tradingsystem.domain.PersistentToken;
 import org.jhipster.tradingsystem.domain.User;
@@ -34,7 +34,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see UserService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 @Transactional
 public class UserServiceIntTest {
 

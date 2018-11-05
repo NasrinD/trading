@@ -1,6 +1,6 @@
 version: '2'
 services:
-    tradingsystem-em-sonar:
+    tradingsystem-mo-sonar:
         image: sonarqube:6.5-alpine
         ports:
             - 9000:9000

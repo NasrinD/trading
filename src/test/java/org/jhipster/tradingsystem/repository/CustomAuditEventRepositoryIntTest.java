@@ -1,6 +1,6 @@
 package org.jhipster.tradingsystem.repository;
 
-import org.jhipster.tradingsystem.TradingsystemEmApp;
+import org.jhipster.tradingsystem.TradingsystemMoApp;
 import org.jhipster.tradingsystem.config.Constants;
 import org.jhipster.tradingsystem.config.audit.AuditEventConverter;
 import org.jhipster.tradingsystem.domain.PersistentAuditEvent;
@@ -32,7 +32,7 @@ import static org.jhipster.tradingsystem.repository.CustomAuditEventRepository.E
  * @see CustomAuditEventRepository
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TradingsystemEmApp.class)
+@SpringBootTest(classes = TradingsystemMoApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIntTest {
 
