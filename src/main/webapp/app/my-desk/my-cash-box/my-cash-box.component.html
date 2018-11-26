@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h5>MyCashBox</h5>
+        <Label>CashBox Status: {{cashBoxStatus}}</label>
+        </br></br>          
+        <button (click)="startNewSale()">Start a new Sale</button>
+        </br></br>
+        <button (click)="finishSale()">Finish the Sale</button>
+        </br></br>
+        <button (click)="chooseBar()">Bar Payment</button>
+        <button (click)="chooseCard()">Card Payment</button>
+        </br></br>                
+        <input #receivedMoney type="text">
+        <button (click)="receiveMoney(receivedMoney.value)">Receive Money</button>
+        </br></br>
+        <button (click)="closeCashBox()">Close CashBox</button>
+      </div>
+      <div class="col-sm">
+        <h5>MyBarCodeScanner</h5>
+        <input #barCodeText type="text" [(ngModel)]="barCode">
+        <button (click)="scanBarCode(barCodeText.value)">Scan Item</button>
+        </br></br>
+        <h5>MyCardReader</h5>
+        <button>Scan Card</button>
+        <input type="text">
+        <button>Enter Pin</button>
+      </div>      
+      <div class="col-sm">
+        <h5>MyCashDeskGUI</h5>
+        <table>
+          <tr>
+            <td>ProductName,</td>
+            <td>SalesPrice</td>
+          </tr>
+          <tr>
+            <td>{{product?.name}}</td>
+            <td>{{product?.price}}</td>
+          </tr>
+        </table>
+        </br></br>
+        <h5>MyPrinter</h5>
+        <table>
+            <tr>
+                <td>Name,</td>
+                <td>StockItemId,</td>
+                <td>SalesPrice,</td>
+                <td>Inventory</td>
+            </tr>
+            <tr *ngFor="let purchasedProduct of purchasedProducts">
+                <td>{{purchasedProduct?.name}}</td>
+                <td>{{purchasedProduct?.stockItem?.id}}</td>
+                <td>{{purchasedProduct?.price}}</td>
+                <td>{{purchasedProduct?.stockItem?.amount}}</td>
+            </tr>
+            <tr>
+              <td>
+                Total Price: {{totalPrice}}
+              </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>

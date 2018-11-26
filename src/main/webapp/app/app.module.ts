@@ -17,6 +17,7 @@ import { TradingsystemMoAccountModule } from './account/account.module';
 import { TradingsystemMoEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from './shared/auth/state-storage.service';
+import { MyDeskModule } from './my-desk/my-desk.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -38,6 +39,7 @@ import {
         TradingsystemMoAdminModule,
         TradingsystemMoAccountModule,
         TradingsystemMoEntityModule,
+        MyDeskModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
