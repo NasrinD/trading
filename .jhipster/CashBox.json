@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "controller",
+            "otherEntityName": "cashBoxController",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashBox"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "receipts",
+            "otherEntityName": "receipt",
+            "otherEntityRelationshipName": "cashBox"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cashBox"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "model",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20181105195444",
+    "entityTableName": "cash_box",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

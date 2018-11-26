@@ -1,0 +1,22 @@
+
+{
+    "tradingsystemMoApp": {
+        "printerController" : {
+            "home": {
+                "title": "Printer Controllers",
+                "createLabel": "Create a new Printer Controller",
+                "createOrEditLabel": "Create or edit a Printer Controller"
+            },
+            "created": "A new Printer Controller is created with identifier {{ param }}",
+            "updated": "A Printer Controller is updated with identifier {{ param }}",
+            "deleted": "A Printer Controller is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Printer Controller {{ id }}?"
+            },
+            "detail": {
+                "title": "Printer Controller"
+            },
+            "printer": "Printer"
+        }
+    }
+}

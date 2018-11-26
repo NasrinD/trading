@@ -1,0 +1,9 @@
+{
+    "tradingsystemMoApp": {
+        "PaymentMode" : {
+            "null": "",
+            "CASH": "CASH",
+            "CARD": "CARD"
+        }
+    }
+}

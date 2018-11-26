@@ -1,0 +1,46 @@
+
+<div *ngIf="receipt">
+    <h2><span jhiTranslate="tradingsystemMoApp.receipt.detail.title">Receipt</span> {{receipt.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="tradingsystemMoApp.receipt.date">Date</span></dt>
+        <dd>
+            <span>{{receipt.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.receipt.paymentMode">Payment Mode</span></dt>
+        <dd>
+            <span jhiTranslate="{{'tradingsystemMoApp.PaymentMode.' + receipt.paymentMode}}">{{receipt.paymentMode}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.receipt.runningTotal">Running Total</span></dt>
+        <dd>
+            <span>{{receipt.runningTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.receipt.cashBox">Cash Box</span></dt>
+        <dd>
+            <div *ngIf="receipt.cashBox">
+                <a [routerLink]="['/cash-box', receipt.cashBox?.id]">{{receipt.cashBox?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.receipt.customer">Customer</span></dt>
+        <dd>
+            <div *ngIf="receipt.customer">
+                <a [routerLink]="['/customer', receipt.customer?.id]">{{receipt.customer?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'receipt/'+ receipt.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

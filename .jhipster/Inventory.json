@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "stockItems",
+            "otherEntityName": "stockItem",
+            "otherEntityRelationshipName": "inventory"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "store",
+            "otherEntityName": "store",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "inventory"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20181105195459",
+    "entityTableName": "inventory",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

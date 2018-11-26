@@ -1,0 +1,25 @@
+
+{
+    "tradingsystemMoApp": {
+        "acquiringBank" : {
+            "home": {
+                "title": "Acquiring Banks",
+                "createLabel": "Create a new Acquiring Bank",
+                "createOrEditLabel": "Create or edit a Acquiring Bank"
+            },
+            "created": "A new Acquiring Bank is created with identifier {{ param }}",
+            "updated": "A Acquiring Bank is updated with identifier {{ param }}",
+            "deleted": "A Acquiring Bank is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Acquiring Bank {{ id }}?"
+            },
+            "detail": {
+                "title": "Acquiring Bank"
+            },
+            "name": "Name",
+            "address": "Address",
+            "cardReaders": "Card Readers",
+            "network": "Network"
+        }
+    }
+}

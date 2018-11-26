@@ -1,0 +1,25 @@
+
+{
+    "tradingsystemMoApp": {
+        "receiptItem" : {
+            "home": {
+                "title": "Receipt Items",
+                "createLabel": "Create a new Receipt Item",
+                "createOrEditLabel": "Create or edit a Receipt Item"
+            },
+            "created": "A new Receipt Item is created with identifier {{ param }}",
+            "updated": "A Receipt Item is updated with identifier {{ param }}",
+            "deleted": "A Receipt Item is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Receipt Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Receipt Item"
+            },
+            "productBarCode": "Product Bar Code",
+            "productPrice": "Product Price",
+            "productName": "Product Name",
+            "receipt": "Receipt"
+        }
+    }
+}

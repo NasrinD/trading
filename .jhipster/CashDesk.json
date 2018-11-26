@@ -1,0 +1,67 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "printer",
+            "otherEntityName": "printer",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashBox",
+            "otherEntityName": "cashBox",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDeskGui",
+            "otherEntityName": "cashDeskGUI",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "barCodeScanner",
+            "otherEntityName": "barCodeScanner",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cardReader",
+            "otherEntityName": "cardReader",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDeskApplication",
+            "otherEntityName": "cashDeskApplication",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cashDesk"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "store",
+            "otherEntityName": "store",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cashDesk"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20181105195441",
+    "entityTableName": "cash_desk",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "receiptItems",
+            "otherEntityName": "receiptItem",
+            "otherEntityRelationshipName": "receipt"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cashBox",
+            "otherEntityName": "cashBox",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "paymentMode",
+            "fieldType": "PaymentMode",
+            "fieldValues": "CASH,CARD",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "runningTotal",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20181105195457",
+    "entityTableName": "receipt",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,92 @@
+<div>
+    <h2>
+        <span jhiTranslate="tradingsystemMoApp.cashDesk.home.title">Cash Desks</span>
+        <button class="btn btn-primary float-right jh-create-entity create-cash-desk" [routerLink]="['/', { outlets: { popup: ['cash-desk-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="tradingsystemMoApp.cashDesk.home.createLabel">
+            Create new Cash Desk
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="cashDesks">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.cashDesk.printer">Printer</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.cashDesk.cashBox">Cash Box</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.cashDesk.cashDeskGui">Cash Desk Gui</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.cashDesk.barCodeScanner">Bar Code Scanner</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.cashDesk.cardReader">Card Reader</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.cashDesk.cashDeskApplication">Cash Desk Application</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cashDesk of cashDesks ;trackBy: trackId">
+                <td><a [routerLink]="['../cash-desk', cashDesk.id ]">{{cashDesk.id}}</a></td>
+                <td>
+                    <div *ngIf="cashDesk.printer">
+                        <a [routerLink]="['../printer', cashDesk.printer?.id ]" >{{cashDesk.printer?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="cashDesk.cashBox">
+                        <a [routerLink]="['../cash-box', cashDesk.cashBox?.id ]" >{{cashDesk.cashBox?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="cashDesk.cashDeskGui">
+                        <a [routerLink]="['../cash-desk-gui', cashDesk.cashDeskGui?.id ]" >{{cashDesk.cashDeskGui?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="cashDesk.barCodeScanner">
+                        <a [routerLink]="['../bar-code-scanner', cashDesk.barCodeScanner?.id ]" >{{cashDesk.barCodeScanner?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="cashDesk.cardReader">
+                        <a [routerLink]="['../card-reader', cashDesk.cardReader?.id ]" >{{cashDesk.cardReader?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="cashDesk.cashDeskApplication">
+                        <a [routerLink]="['../cash-desk-application', cashDesk.cashDeskApplication?.id ]" >{{cashDesk.cashDeskApplication?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../cash-desk', cashDesk.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'cash-desk/'+ cashDesk.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'cash-desk/'+ cashDesk.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

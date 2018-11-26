@@ -1,0 +1,23 @@
+
+{
+    "tradingsystemMoApp": {
+        "inventory" : {
+            "home": {
+                "title": "Inventories",
+                "createLabel": "Create a new Inventory",
+                "createOrEditLabel": "Create or edit a Inventory"
+            },
+            "created": "A new Inventory is created with identifier {{ param }}",
+            "updated": "A Inventory is updated with identifier {{ param }}",
+            "deleted": "A Inventory is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Inventory {{ id }}?"
+            },
+            "detail": {
+                "title": "Inventory"
+            },
+            "stockItems": "Stock Items",
+            "store": "Store"
+        }
+    }
+}

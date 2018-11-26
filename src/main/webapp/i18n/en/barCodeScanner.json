@@ -1,0 +1,24 @@
+
+{
+    "tradingsystemMoApp": {
+        "barCodeScanner" : {
+            "home": {
+                "title": "Bar Code Scanners",
+                "createLabel": "Create a new Bar Code Scanner",
+                "createOrEditLabel": "Create or edit a Bar Code Scanner"
+            },
+            "created": "A new Bar Code Scanner is created with identifier {{ param }}",
+            "updated": "A Bar Code Scanner is updated with identifier {{ param }}",
+            "deleted": "A Bar Code Scanner is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Bar Code Scanner {{ id }}?"
+            },
+            "detail": {
+                "title": "Bar Code Scanner"
+            },
+            "model": "Model",
+            "controller": "Controller",
+            "cashDesk": "Cash Desk"
+        }
+    }
+}

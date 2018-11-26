@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Store.
+    -->
+    <changeSet id="20181105195440-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cash_desk_id"
+                                 baseTableName="store"
+                                 constraintName="fk_store_cash_desk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cash_desk"/>
+
+        <addForeignKeyConstraint baseColumnNames="inventory_id"
+                                 baseTableName="store"
+                                 constraintName="fk_store_inventory_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inventory"/>
+
+        <addForeignKeyConstraint baseColumnNames="stores_id"
+                                 baseTableName="store_cashiers"
+                                 constraintName="fk_store_cashiers_stores_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="store"/>
+        <addForeignKeyConstraint baseColumnNames="cashiers_id"
+                                 baseTableName="store_cashiers"
+                                 constraintName="fk_store_cashiers_cashiers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -29,6 +29,138 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="store" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.store">Store</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="cash-desk" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cashDesk">Cash Desk</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="cash-desk-application" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cashDeskApplication">Cash Desk Application</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="cash-desk-gui" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cashDeskGui">Cash Desk Gui</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="cash-box" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cashBox">Cash Box</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="cash-box-controller" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cashBoxController">Cash Box Controller</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="printer" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.printer">Printer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="printer-controller" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.printerController">Printer Controller</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="bar-code-scanner" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.barCodeScanner">Bar Code Scanner</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="bar-code-scanner-controller" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.barCodeScannerController">Bar Code Scanner Controller</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="card-reader" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cardReader">Card Reader</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="card-reader-controller" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.cardReaderController">Card Reader Controller</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="issuing-bank" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.issuingBank">Issuing Bank</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="debit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.debit">Debit</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="acquiring-bank" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.acquiringBank">Acquiring Bank</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="network" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.network">Network</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="customer" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.customer">Customer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="receipt" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.receipt">Receipt</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="receipt-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.receiptItem">Receipt Item</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="inventory" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.inventory">Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="stock-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.stockItem">Stock Item</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="product" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.entities.product">Product</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

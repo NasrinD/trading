@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cashDesk",
+            "otherEntityName": "cashDesk",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "store"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "inventory",
+            "otherEntityName": "inventory",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "store"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "cashiers",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20181105195440",
+    "entityTableName": "store",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

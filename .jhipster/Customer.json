@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "debits",
+            "otherEntityName": "debit",
+            "otherEntityRelationshipName": "owner"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "receipts",
+            "otherEntityName": "receipt",
+            "otherEntityRelationshipName": "customer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20181105195456",
+    "entityTableName": "customer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cardReaders",
+            "otherEntityName": "cardReader",
+            "otherEntityRelationshipName": "acquiringBank"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "network",
+            "otherEntityName": "network",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20181105195454",
+    "entityTableName": "acquiring_bank",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

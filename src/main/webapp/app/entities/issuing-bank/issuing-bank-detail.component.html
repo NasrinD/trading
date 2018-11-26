@@ -1,0 +1,36 @@
+
+<div *ngIf="issuingBank">
+    <h2><span jhiTranslate="tradingsystemMoApp.issuingBank.detail.title">Issuing Bank</span> {{issuingBank.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="tradingsystemMoApp.issuingBank.name">Name</span></dt>
+        <dd>
+            <span>{{issuingBank.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.issuingBank.address">Address</span></dt>
+        <dd>
+            <span>{{issuingBank.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.issuingBank.network">Network</span></dt>
+        <dd>
+            <div *ngIf="issuingBank.network">
+                <a [routerLink]="['/network', issuingBank.network?.id]">{{issuingBank.network?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'issuing-bank/'+ issuingBank.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

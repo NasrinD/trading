@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "stockItem"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "inventory",
+            "otherEntityName": "inventory",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "minStock",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "maxStock",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20181105195500",
+    "entityTableName": "stock_item",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

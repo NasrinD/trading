@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cardReader",
+            "otherEntityName": "cardReader",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "controller"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20181105195451",
+    "entityTableName": "card_reader_controller",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

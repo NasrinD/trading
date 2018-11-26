@@ -1,0 +1,46 @@
+
+<div *ngIf="debit">
+    <h2><span jhiTranslate="tradingsystemMoApp.debit.detail.title">Debit</span> {{debit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="tradingsystemMoApp.debit.pin">Pin</span></dt>
+        <dd>
+            <span>{{debit.pin}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.debit.cardNumber">Card Number</span></dt>
+        <dd>
+            <span>{{debit.cardNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.debit.validityDate">Validity Date</span></dt>
+        <dd>
+            <span>{{debit.validityDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.debit.owner">Owner</span></dt>
+        <dd>
+            <div *ngIf="debit.owner">
+                <a [routerLink]="['/customer', debit.owner?.id]">{{debit.owner?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="tradingsystemMoApp.debit.issuingBank">Issuing Bank</span></dt>
+        <dd>
+            <div *ngIf="debit.issuingBank">
+                <a [routerLink]="['/issuing-bank', debit.issuingBank?.id]">{{debit.issuingBank?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'debit/'+ debit.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

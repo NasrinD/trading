@@ -1,0 +1,25 @@
+
+{
+    "tradingsystemMoApp": {
+        "issuingBank" : {
+            "home": {
+                "title": "Issuing Banks",
+                "createLabel": "Create a new Issuing Bank",
+                "createOrEditLabel": "Create or edit a Issuing Bank"
+            },
+            "created": "A new Issuing Bank is created with identifier {{ param }}",
+            "updated": "A Issuing Bank is updated with identifier {{ param }}",
+            "deleted": "A Issuing Bank is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Issuing Bank {{ id }}?"
+            },
+            "detail": {
+                "title": "Issuing Bank"
+            },
+            "name": "Name",
+            "address": "Address",
+            "debits": "Debits",
+            "network": "Network"
+        }
+    }
+}

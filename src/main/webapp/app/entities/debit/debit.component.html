@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="tradingsystemMoApp.debit.home.title">Debits</span>
+        <button class="btn btn-primary float-right jh-create-entity create-debit" [routerLink]="['/', { outlets: { popup: ['debit-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="tradingsystemMoApp.debit.home.createLabel">
+            Create new Debit
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="debits">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.debit.pin">Pin</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.debit.cardNumber">Card Number</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.debit.validityDate">Validity Date</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.debit.owner">Owner</span></th>
+            <th><span jhiTranslate="tradingsystemMoApp.debit.issuingBank">Issuing Bank</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let debit of debits ;trackBy: trackId">
+                <td><a [routerLink]="['../debit', debit.id ]">{{debit.id}}</a></td>
+                <td>{{debit.pin}}</td>
+                <td>{{debit.cardNumber}}</td>
+                <td>{{debit.validityDate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="debit.owner">
+                        <a [routerLink]="['../customer', debit.owner?.id ]" >{{debit.owner?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="debit.issuingBank">
+                        <a [routerLink]="['../issuing-bank', debit.issuingBank?.id ]" >{{debit.issuingBank?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../debit', debit.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'debit/'+ debit.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'debit/'+ debit.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
